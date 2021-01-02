@@ -29,7 +29,7 @@ configure<PublishingExtension>{
 	repositories {
 		maven {
 			name = "GitHubPackages"
-			url = uri("https://maven.pkg.github.com/OWNER/REPOSITORY")
+			url = uri("https://maven.pkg.github.com/tender-golmal/golmal-data")
 			credentials {
 				username = project.findProperty("gpr.user")?.toString()  ?: System.getenv("USERNAME")
 				password = project.findProperty("gpr.key")?.toString() ?: System.getenv("TOKEN")
