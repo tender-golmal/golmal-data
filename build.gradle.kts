@@ -31,8 +31,8 @@ configure<PublishingExtension>{
 			name = "GitHubPackages"
 			url = uri("https://maven.pkg.github.com/OWNER/REPOSITORY")
 			credentials {
-				username = (project.findProperty("gpr.user")  ?: System.getenv("USERNAME")) as String
-				password = (project.findProperty("gpr.key") ?: System.getenv("TOKEN")) as String
+				username = project.findProperty("gpr.user")?.toString()  ?: System.getenv("USERNAME")
+				password = project.findProperty("gpr.key")?.toString() ?: System.getenv("TOKEN")
 			}
 		}
 	}
