@@ -8,8 +8,12 @@ plugins {
 	kotlin("plugin.spring") version "1.4.21"
 }
 
+var versionMajor= Integer.parseInt(project.property("version.major")?.toString()?:"0")+1
+var versionBuild=Integer.parseInt(project.property("version.build")?.toString()?:"0")+1
+var patchNo=System.getenv("PATCH_NO")?.toString()?:"0"
+
 group = "com.golmal"
-version = "1.0.1"
+version = "${versionMajor}.${versionBuild}.${patchNo}"
 java.sourceCompatibility = JavaVersion.VERSION_11
 
 repositories {
@@ -59,5 +63,3 @@ tasks.getByName<Jar>("jar") {
 tasks.getByName<org.springframework.boot.gradle.tasks.bundling.BootJar>("bootJar") {
 
 }
-
-
