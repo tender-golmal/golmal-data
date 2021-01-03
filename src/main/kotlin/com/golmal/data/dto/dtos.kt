@@ -15,4 +15,4 @@ data class LoginRequest(
 data class LoginResponse(
     val token:String
 )
-data class ApiResponse(val status:Int, val message:JvmType.Object, val result:JvmType.Object)
+data class ApiResponse(val status:Int, val message:Any, val result:Any)
