@@ -22,7 +22,7 @@ jobs:
         settings-path: ${{ github.workspace }} # location for the settings.xml file
 
     - name: Build with Gradle
-      run: gradle build
+      run: echo $GITHUB_RUN_NUMBER && gradle build
       env:
         PATCH_NO: ${{ secrets.GITHUB_RUN_NUMBER }}
 
