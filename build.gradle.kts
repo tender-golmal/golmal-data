@@ -8,10 +8,10 @@ plugins {
 	kotlin("plugin.spring") version "1.4.21"
 }
 
-var versionMajor= Integer.parseInt(project.property("version.major")?.toString()?:"0")+1
-var versionBuild=Integer.parseInt(project.property("version.build")?.toString()?:"0")+1
+var versionMajor= project.property("version.major")?.toString()?:"0"
+var versionBuild=project.property("version.build")?.toString()?:"0"
 var patchNo=System.getenv("PATCH_NO")?.toString()?:"0"
-
+println("my git version ${System.getenv("PATCH_NO")}")
 group = "com.golmal"
 version = "${versionMajor}.${versionBuild}.${patchNo}"
 java.sourceCompatibility = JavaVersion.VERSION_11
