@@ -10,8 +10,8 @@ plugins {
 
 var versionMajor= project.property("version.major")?.toString()?:"0"
 var versionBuild=project.property("version.build")?.toString()?:"0"
-var patchNo=System.getenv("PATCH_NO")?.toString()?:"0"
-println("my git version ${System.getenv("PATCH_NO")}")
+var patchNo=System.getenv("GITHUB_RUN_NUMBER")?.toString()?:"0"
+println("my git version ${System.getenv("GITHUB_RUN_NUMBER")}")
 group = "com.golmal"
 version = "${versionMajor}.${versionBuild}.${patchNo}"
 java.sourceCompatibility = JavaVersion.VERSION_11
