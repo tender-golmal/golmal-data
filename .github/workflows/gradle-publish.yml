@@ -24,7 +24,7 @@ jobs:
     - name: Build with Gradle
       run: gradle build
       env:
-        PATCH_NO: ${{ GITHUB_RUN_NUMBER }}
+        PATCH_NO: ${{ secrets.GITHUB_RUN_NUMBER }}
 
     # The USERNAME and TOKEN need to correspond to the credentials environment variables used in
     # the publishing section of your build.gradle
