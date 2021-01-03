@@ -7,6 +7,7 @@ import org.springframework.data.mongodb.core.mapping.Document
 @Document("users")
 data class UserProfile(
     @Id
+    val id:String,
     val email:String,
     var firstName:String?,
     var lastName:String?,
