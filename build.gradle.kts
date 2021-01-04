@@ -2,11 +2,19 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
 	`maven-publish`
-	id("org.springframework.boot") version "2.4.1"
+	id("org.springframework.boot") version "2.4.1" apply false
 	id("io.spring.dependency-management") version "1.0.10.RELEASE"
 	kotlin("jvm") version "1.4.21"
 	kotlin("plugin.spring") version "1.4.21"
 }
+apply(plugin = "io.spring.dependency-management")
+
+the<io.spring.gradle.dependencymanagement.dsl.DependencyManagementExtension>().apply {
+	imports {
+		mavenBom(org.springframework.boot.gradle.plugin.SpringBootPlugin.BOM_COORDINATES)
+	}
+}
+
 
 var versionMajor= project.property("version.major")?.toString()?:"0"
 var versionBuild=project.property("version.build")?.toString()?:"0"
@@ -58,7 +66,4 @@ tasks.withType<Test> {
 
 tasks.getByName<Jar>("jar") {
 	enabled = true
-}
-tasks.getByName<org.springframework.boot.gradle.tasks.bundling.BootJar>("bootJar") {
-
 }
