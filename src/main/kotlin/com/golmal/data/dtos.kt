@@ -1,13 +1,20 @@
 package com.golmal.data.dto
 
+import javax.validation.constraints.Email
+import javax.validation.constraints.NotBlank
+
 data class RegisterRequest(
+    @Email
     val email:String,
+    @NotBlank
     val password:String,
     val firstName:String?,
     val secondName:String?
 )
 data class LoginRequest(
+    @Email
     val email:String,
+    @NotBlank
     val password: String
 )
 data class LoginResponse(
