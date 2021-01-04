@@ -5,11 +5,11 @@ import javax.validation.constraints.NotBlank
 
 data class RegisterRequest(
     @Email
-    val email:String,
+    var email:String,
     @NotBlank
-    val password:String,
-    val firstName:String?,
-    val secondName:String?
+    var password:String,
+    var firstName:String?,
+    var secondName:String?
 )
 data class LoginRequest(
     @Email
