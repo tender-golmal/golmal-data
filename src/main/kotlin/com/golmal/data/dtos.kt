@@ -9,7 +9,9 @@ data class RegisterRequest(
     @NotBlank
     var password:String,
     var firstName:String?,
-    var secondName:String?
+    var secondName:String?,
+    var provider:String?,
+    var providerId:String?
 )
 data class LoginRequest(
     @Email
