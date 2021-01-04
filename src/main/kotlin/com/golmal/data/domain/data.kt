@@ -11,7 +11,7 @@ data class UserProfile(
     val email:String,
     var firstName:String?,
     var lastName:String?,
-    @DBRef val roles:List<Role>,
+    val roles:List<Role>,
     var password:String
 )
 enum class RoleType{

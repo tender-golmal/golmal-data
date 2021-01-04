@@ -1,7 +1,5 @@
 package com.golmal.data.dto
 
-import kotlin.reflect.jvm.internal.impl.load.kotlin.JvmType
-
 data class RegisterRequest(
     val email:String,
     val password:String,
