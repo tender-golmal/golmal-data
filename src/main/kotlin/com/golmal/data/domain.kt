@@ -18,7 +18,9 @@ data class UserProfile(
     @NotEmpty
     val roles:List<Role>,
     @NotBlank
-    var password:String
+    var password:String,
+    var provider:String?,
+    var providerId:String?
 )
 enum class RoleType{
     ROLE_USER,
